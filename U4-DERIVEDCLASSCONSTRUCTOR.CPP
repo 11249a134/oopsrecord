@@ -1,15 +1,16 @@
 #include <iostream>
 using namespace std;
-class Book {
-public:
- Book() { cout << "Base class Book constructor\n"; }
- ~Book() { cout << "Base class Book destructor\n"; }
-};
-class LibraryBook : public Book {
-public:
- LibraryBook() { cout << "Derived class LibraryBook constructor\n"; }
- ~LibraryBook() { cout << "Derived class LibraryBook destructor\n"; }
-};
 int main() {
- LibraryBook lb;
+ int n;
+ cout << "Enter size of array: ";
+ cin >> n;
+ int *arr = new int[n];
+ cout << "Enter " << n << " elements: ";
+ for (int i = 0; i < n; i++)
+ cin >> arr[i];
+ cout << "You entered: ";
+ for (int i = 0; i < n; i++)
+ cout << arr[i] << " ";
+ delete[] arr;
+ return 0;
 }
